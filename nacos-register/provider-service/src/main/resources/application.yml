@@ -1,0 +1,21 @@
+server:
+  port: 8081
+# spring应用名，nacos会将其作为注册的服务名称
+spring:
+  application:
+    name: nacos-provider-service
+  cloud:
+    # nacos服务注册配置
+    nacos:
+      # 注册发现
+      discovery:
+        # nacos注册地址
+        server-addr: 127.0.0.1:8848
+        # 登录nacos的账号密码
+        username: nacos
+        password: nacos
+        # 指定命名空间（命名空间用于隔离不同的环境，nacos默认会有一个public的命名空间）
+        namespace: 0ebbe328-e689-407b-b953-27ac1b860664
+        # 指定服务分组，默认都归属于 DEFAULT_GROUP 这个分组
+        # (分组通常将不同项目归档不同的组，例如商城项目，医疗项目等，将他们的服务归纳到自己的分组中)
+        group: DEFAULT_GROUP

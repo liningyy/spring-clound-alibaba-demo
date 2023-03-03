@@ -1,0 +1,27 @@
+#spring:
+#  application:
+#    name: city-service
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+#        username: nacos
+#        password: nacos
+#        group: CITY_GROUP
+#        namespace: 21740c43-2c0f-43e4-8eeb-7cd46830e94a
+#  datasource:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://127.0.0.1:3306/citydb?serverTimezone=Asia/Shanghai&unicode=true&characterEncoding=utf-8
+#      username: root
+#      password: admin123
+#      hikari:
+#        minimum-idle: 5
+#        maximum-pool-size: 20
+#        idle-timeout: 6000
+#        connection-timeout: 15000
+#        connection-test-query: select 1
+#mybatis:
+#  type-aliases-package: com.ming.cityservice.entity
+#  mapper-locations: classpath:/mappers/*.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

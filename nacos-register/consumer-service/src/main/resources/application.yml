@@ -1,0 +1,12 @@
+spring:
+  application:
+    # 注册服务名字
+    name: nacos-consumer-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+        namespace: 0ebbe328-e689-407b-b953-27ac1b860664
+        group: DEFAULT_GROUP

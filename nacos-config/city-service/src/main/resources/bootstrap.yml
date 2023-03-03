@@ -1,0 +1,16 @@
+# 固定属性，系统服务配置
+spring:
+  application:
+    name: city-service
+  cloud:
+    nacos:
+      # 配置中心设置
+      config:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+        namespace: 21740c43-2c0f-43e4-8eeb-7cd46830e94a
+        group: CITY_GROUP
+        # 指定后缀，默认是properties，如果使用了其他后缀必须指定
+        file-extension: yaml
+

@@ -1,0 +1,38 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: openfeign-consumer
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: nacos
+        group: DEFAULT_GROUP
+        server-addr: 127.0.0.1:8848
+        namespace: 0ebbe328-e689-407b-b953-27ac1b860664
+# feign 设置
+feign:
+  client:
+    config:
+      default:
+        # Feign的日志输出级别
+        # none：默认的，不显示任何日志信息，这个级别的性能是最好的
+        # basic：仅仅输出请求方法，url，响应状态码以及执行的时间日志信息，适用于生产环境中的问题追踪
+        # headers：在basic级别的基础上，还输出请求头和响应头日志信息
+        # full：记录请求和相应的header、body和元数据，使用于开发环境和测试环境使用
+        logger-level: none
+        # 连接超时的时间，默认是1秒（获取连接，没有获取到等待2秒）
+        connect-timeout: 2000
+        # 请求处理超时时间，默认也是1秒（3秒内要处理我发送的请求）
+        read-timeout: 3000
+  # feign的日志级别和日志框架，不是一回事，feign的日志级别决定输出那些请求信息。
+# 而日志框架输出的是debug、info或者其他的级别信息，标识日志的细粒度
+logging:
+  level:
+    # OpenFeign的输出日志级别
+    com.ming.openfeignconsumer.feign.ProviderFeignClient: debug
+    # 控制台输出的日志级别
+    root: trace
+    # 启用Ribbon的TRACE日志，记录Ribbon的每个决策和行为
+    com.netflix.loadbalancer: TRACE
