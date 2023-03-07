@@ -9,8 +9,8 @@ spring:
         server-addr: 127.0.0.1:8848
         username: nacos
         password: nacos
-        namespace: 21740c43-2c0f-43e4-8eeb-7cd46830e94a
-        group: CITY_GROUP
+        namespace: 4e0aaccb-4302-4bae-872d-2ae61471d885
+        group: DEFAULT_GROUP
         # 指定后缀，默认是properties，如果使用了其他后缀必须指定
         file-extension: yaml
 

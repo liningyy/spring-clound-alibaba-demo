@@ -1,0 +1,24 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: navtiveapp-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+#        namespace: 0ebbe328-e689-407b-b953-27ac1b860664
+    gateway:
+      routes:
+        - id: user_route
+          uri: lb://user-service:8081
+          predicates:
+            - Path=/user-service/**
+            - User=1001,1002,1003
+          filters:
+            - StripPrefix=1
+            # 启用自定义类型的过滤器
+            - My=true
+
