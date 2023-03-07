@@ -8,7 +8,7 @@
 #        username: nacos
 #        password: nacos
 #        group: CITY_GROUP
-#        namespace: 21740c43-2c0f-43e4-8eeb-7cd46830e94a
+#        namespace: 4e0aaccb-4302-4bae-872d-2ae61471d885
 #  datasource:
 #      driver-class-name: com.mysql.cj.jdbc.Driver
 #      url: jdbc:mysql://127.0.0.1:3306/citydb?serverTimezone=Asia/Shanghai&unicode=true&characterEncoding=utf-8

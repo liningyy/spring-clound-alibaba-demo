@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/openfegin/openfeign-provider/pom.xml" />
         <option value="$PROJECT_DIR$/openfegin/openfeign-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/nacos-config/city-service/pom.xml" />
+        <option value="$PROJECT_DIR$/getaway/user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/getaway/nativeapp-getaway/pom.xml" />
       </list>
     </option>
   </component>

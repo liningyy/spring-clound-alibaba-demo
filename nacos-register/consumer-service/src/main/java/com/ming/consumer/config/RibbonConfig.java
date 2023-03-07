@@ -1,7 +1,7 @@
 package com.ming.consumer.config;
 
-import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
+//import com.netflix.loadbalancer.IRule;
+//import com.netflix.loadbalancer.RandomRule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,7 +10,8 @@ import org.springframework.context.annotation.Configuration;
  * @date 2023/3/1
  */
 
-@Configuration
+@Deprecated
+// @Configuration
 public class RibbonConfig {
 
     /**
@@ -18,8 +19,8 @@ public class RibbonConfig {
      * 注意：方法名一定要是 iRule
      * @return
      */
-    @Bean
-    public IRule iRule(){
-        return new RandomRule();
-    }
+//    @Bean
+//    public IRule iRule(){
+//        return new RandomRule();
+//    }
 }
