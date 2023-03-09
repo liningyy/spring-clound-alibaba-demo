@@ -11,6 +11,6 @@ import lombok.Data;
 @Data
 public class CityDto {
     private Integer cityId;
-    private String cityName;
+    private String  cityName;
     private String province;
 }

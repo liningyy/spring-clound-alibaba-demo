@@ -22,6 +22,8 @@
         <module>openfegin</module>
         <module>nacos-config</module>
         <module>getaway</module>
+        <module>getway-auth-demo</module>
+        <module>sentinel</module>
     </modules>
 
     <properties>
