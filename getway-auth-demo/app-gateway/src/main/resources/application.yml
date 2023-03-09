@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: app-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+        group: DEFAULT_GROUP
+        namespace: 4e0aaccb-4302-4bae-872d-2ae61471d885
+    gateway:
+      routes:
+        - id: auth-router
+          uri: lb://auth-service:8081
+          predicates:
+            - Path=/auth-service/**
+          filters:
+            - StripPrefix=1
+            - Token=true
+        - id: user-router
+          uri: lb://users-service:8082
+          predicates:
+            - Path=/users-service/**
+          filters:
+            - StripPrefix=1
+            - Token=true
+

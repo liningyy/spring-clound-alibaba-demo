@@ -1,0 +1,25 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: degrade-consumer-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+    sentinel:
+      transport:
+        dashboard: http://127.0.0.1:8080
+# 将feign整合sentinel，整合以后sentinel的异常信息回传到openfeign中
+feign:
+  sentinel:
+    enabled: true
+  # feign客户端设置
+  client:
+    config:
+      default:
+        logger-level: none
+        connect-timeout: 5000
+        read-timeout: 5000

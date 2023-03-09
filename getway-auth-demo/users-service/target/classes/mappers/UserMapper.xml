@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ming.usersservice.dao.UserDao">
+
+    <resultMap id="userMap" type="com.ming.usersservice.entity.User">
+        <id property="uid" column="uid"/>
+        <result property="account" column="account"/>
+        <result property="password" column="password"/>
+        <result property="userName" column="user_name"/>
+    </resultMap>
+
+    <!-- User getUserByAccount(String account); -->
+    <select id="getUserByAccount" resultMap="userMap">
+        select uid,account,password,user_name from user_info where account = #{account} limit 1
+    </select>
+
+    <!-- User getUserById(@Param("id") int id); -->
+    <select id="getUserById" resultMap="userMap">
+        select uid,account,password,user_name from user_info where uid = #{id} limit 1
+    </select>
+</mapper>
