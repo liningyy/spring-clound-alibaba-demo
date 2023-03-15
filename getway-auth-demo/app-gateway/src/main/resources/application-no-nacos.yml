@@ -1,0 +1,26 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: nativeapp-geteway
+  cloud:
+    # 不注册到nacos
+    nacos:
+      discovery:
+        enable: false
+    # 网关的配置
+    gateway:
+      # 路由规则
+      routes:
+        - id: user_route # 路由到哪一个服务的唯一标识（自定义的），不同的路由规则都有一个唯一标识
+          uri: http://127.0.0.1:8081 # 需要路由到那个服务的IP地址
+          # 基于断言的函数式接口来定义路由规则（匹配什么样的url路由到这个服务上）
+          predicates:
+            - Path=/user-service/**
+          # 网关过滤器，这里的StripPrefix(用于请求微服务时去掉路由的前缀)
+          filters:
+            - StripPrefix=1
+
+          # http:127.0.0.1:8081/user/1001
+          # http:127.0.0.1:8081/user-service/user/1001
+          # StripPrefix=1 请求微服务中去掉 user-service 这一段，微服务的请求地址上是没有这一段的

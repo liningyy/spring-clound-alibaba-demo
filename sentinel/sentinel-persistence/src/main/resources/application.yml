@@ -1,0 +1,39 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: sentinel-presistence-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+      # 数据源配置
+      datasource:
+        # 自定义数据源名称、告诉服务去nacos里面拉取服务
+#        flow:
+#          nacos:
+#            server-addr: 127.0.0.1:8848
+#            username: nacos
+#            password: nacos
+#            # 重新分一个组用于保存sentinel配置
+#            group-id: DEFAULT_GROUP
+#            # 对应 config 配置中心的 data-id
+#            data-id: flow-rule
+#            # 规则类型（限流）
+#            rule-type: flow
+#            # 数据类型为 json
+#            data-type: json
+        degrade:
+          nacos:
+            server-addr: 127.0.0.1:8848
+            username: nacos
+            password: nacos
+            group-id: DEFAULT_GROUP
+            data-id: degrade-rule
+            rule-type: degrade
+            data-type: json

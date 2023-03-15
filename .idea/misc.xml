@@ -19,6 +19,8 @@
         <option value="$PROJECT_DIR$/sentinel/sentinel-flow/pom.xml" />
         <option value="$PROJECT_DIR$/sentinel/sentinel-openfeign/degrade-provider-service/pom.xml" />
         <option value="$PROJECT_DIR$/sentinel/sentinel-openfeign/degrade-consumer-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sentinel-persistence/pom.xml" />
+        <option value="$PROJECT_DIR$/sentinel/sentinel-persistence/pom.xml" />
       </list>
     </option>
   </component>

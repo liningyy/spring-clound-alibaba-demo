@@ -22,6 +22,7 @@
     <modules>
         <module>sentinel-flow</module>
         <module>sentinel-openfeign</module>
+        <module>sentinel-persistence</module>
     </modules>
 
     <dependencies>
@@ -33,6 +34,13 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+
+        <!-- 添加nacos配种中心数据源、做数据推送 -->
+        <!-- https://mvnrepository.com/artifact/com.alibaba.csp/sentinel-datasource-nacos -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>
     </dependencies>
 </project>
